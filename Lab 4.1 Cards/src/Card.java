@@ -2,22 +2,22 @@
 public class Card 
 {
 	String rank;
-	String suite;
+	String suit;
 	int pointValue;
 	
-	public Card(String rank, String suite, int pointValue)
+	public Card(String rank, String suit, int pointValue)
 	{
 		this.rank = rank;
-		this.suite = suite;
+		this.suit = suit;
 		this.pointValue = pointValue;
 	}
 	public String getrank()
 	{
 		return this.rank;
 	}
-	public String getsuite()
+	public String getsuit()
 	{
-		return this.suite;
+		return this.suit;
 	}
 	public int getpointValue()
 	{
@@ -36,6 +36,6 @@ public class Card
 	}
 	public String toString()
 	{
-		return this.rank + " " + this.suite;	
+		return this.rank + " " + this.suit;	
 	}
 }
