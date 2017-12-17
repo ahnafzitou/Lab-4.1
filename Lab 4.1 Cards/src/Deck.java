@@ -33,7 +33,7 @@ public class Deck
 			return false;
 		}
 	}
-	public int size()
+	public int lsize()
 	{
 		boolean checked = true;
 		int x = 0;
