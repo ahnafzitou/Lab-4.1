@@ -7,9 +7,19 @@ public class Deck
 	
 	public Deck(String[] rank,String[] suit,int[] pointValue)
 	{
-		for(int i = 0; i < rank.length; i++)
+		int r = 0;
+		int s = 0;
+		int p = 0;
+		for(int i = 51; i <= 1 ; i++)
 		{
-			unDealt.add(new Card(rank[i],suit[i],pointValue[i]));
+			if(s <= suit.length)
+			{
+				unDealt.add(new Card(rank[r],suit[s],pointValue[p]));
+				s++;
+			}
+			r++;
+			p++;
+			s = 0;	
 		}
 	}
 	public boolean isEmpty()
@@ -25,7 +35,16 @@ public class Deck
 	}
 	public int size()
 	{
-		return unDealt.size();
+		boolean checked = true;
+		int x = 0;
+		while(!checked)
+		{
+			if(unDealt.get(x) != null)
+			{
+				x++;
+			}
+		}
+		return x;
 	}
 	public Card deal()
 	{
@@ -54,14 +73,29 @@ public class Deck
 		{
 			int r = (int)(Math.random() * (k + 1));
 			Card z = unDealt.get(k);
-			unDealt.remove(k);
+			unDealt.set(r, z);
 			Card y = unDealt.get(r);
-			unDealt.add(r,z);
-			unDealt.add(k,y);
+			unDealt.set(k, y);
 		}
 		for(int k = 51; k >= 1; k--)
 		{
-			
+			Card m = unDealt.get(k);
+			int r = 0;
+			if(unDealt.get(k - 1) != null)
+			{
+				if(m.getpointValue() < unDealt.get(k - 1).getpointValue())
+				{
+					r = k - 1;
+				}
+			}	
+			else
+			{
+				r = k;
+			}
+			Card z = unDealt.get(k);
+			unDealt.set(r, z);
+			Card y = unDealt.get(r);
+			unDealt.set(k, y);
 		}
 	}
 }
