@@ -11,16 +11,20 @@ public class Deck
 		int r = 0;
 		int s = 0;
 		int p = 0;
-		for(int i = 51; i <= 1 ; i++)
+		for(int i = 51; i >= 1 ; i--)
 		{
-			if(s <= suit.length)
+			if(s <= suit.length - 1)
 			{
 				unDealt.add(new Card(rank[r],suit[s],pointValue[p]));
 				s++;
 			}
-			r++;
-			p++;
-			s = 0;	
+			else
+			{
+				r++;
+				p++;
+				s = 0;
+			}
+				
 		}
 	}
 	public boolean isEmpty()
