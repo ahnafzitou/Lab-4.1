@@ -8,6 +8,7 @@ public class Deck
 	public Deck(String[] rank,String[] suit,int[] pointValue)
 	{
 		unDealt = new ArrayList<Card>();
+		dealt = new ArrayList<Card>();
 		int r = 0;
 		int s = 0;
 		int p = 0;
