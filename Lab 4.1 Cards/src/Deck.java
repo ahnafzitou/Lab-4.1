@@ -54,33 +54,11 @@ public class Deck
 			dealt.remove(i);
 			unDealt.add(x);
 		}
-		for(int k = 51; k >= 1; k--)
+		for(int k = 51; k >= 0; k--)
 		{
-			int r = (int)(Math.random() * (k + 1));
-			Card z = unDealt.get(k);
-			unDealt.set(r, z);
-			Card y = unDealt.get(r);
-			unDealt.set(k, y);
-		}
-		for(int k = 51; k >= 1; k--)
-		{
-			Card m = unDealt.get(k);
-			int r = 0;
-			if(unDealt.get(k - 1) != null)
-			{
-				if(m.getpointValue() < unDealt.get(k - 1).getpointValue())
-				{
-					r = k - 1;
-				}
-			}	
-			else
-			{
-				r = k;
-			}
-			Card z = unDealt.get(k);
-			unDealt.set(r, z);
-			Card y = unDealt.get(r);
-			unDealt.set(k, y);
+			int r = (int)(Math.random() * k);
+			Card removedCard = unDealt.set(k, unDealt.get(r));
+			unDealt.set(r, removedCard);
 		}
 	}
 }
