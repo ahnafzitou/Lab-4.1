@@ -7,6 +7,7 @@ public class Deck
 	
 	public Deck(String[] rank,String[] suit,int[] pointValue)
 	{
+		unDealt = new ArrayList<Card>();
 		int r = 0;
 		int s = 0;
 		int p = 0;
@@ -33,7 +34,7 @@ public class Deck
 			return false;
 		}
 	}
-	public int lsize()
+	public int size()
 	{
 		boolean checked = true;
 		int x = 0;
