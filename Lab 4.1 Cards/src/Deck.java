@@ -9,23 +9,12 @@ public class Deck
 	{
 		unDealt = new ArrayList<Card>();
 		dealt = new ArrayList<Card>();
-		int r = 0;
-		int s = 0;
-		int p = 0;
-		for(int i = 51; i >= 1 ; i--)
+		for(int s = 0; s < suit.length ; s++)
 		{
-			if(s <= suit.length - 1)
+			for(int i = 0; i < rank.length; i++)
 			{
-				unDealt.add(new Card(rank[r],suit[s],pointValue[p]));
-				s++;
-			}
-			else
-			{
-				r++;
-				p++;
-				s = 0;
-			}
-				
+				unDealt.add(new Card(rank[i],suit[s],pointValue[i]));
+			}	
 		}
 	}
 	public boolean isEmpty()
@@ -45,18 +34,17 @@ public class Deck
 	}
 	public Card deal()
 	{
-		
-		for(int i = 0; i < unDealt.size(); i++)
+		if(unDealt.size() != 0)
 		{
-			if(unDealt.size() != 0)
-			{
-				Card x = unDealt.get(i);
-				unDealt.remove(i);
-				dealt.add(x);
-				return x;
-			}
+			Card x = unDealt.get(0);
+			unDealt.remove(0);
+			dealt.add(x);
+			return x;
 		}
-		return null;
+		else
+		{	
+			return null;
+		}
 	}
 	public void shuffle()
 	{
