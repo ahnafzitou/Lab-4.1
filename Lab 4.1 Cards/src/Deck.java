@@ -41,16 +41,7 @@ public class Deck
 	}
 	public int size()
 	{
-		boolean checked = true;
-		int x = 0;
-		while(!checked)
-		{
-			if(unDealt.get(x) != null)
-			{
-				x++;
-			}
-		}
-		return x;
+		return unDealt.size();
 	}
 	public Card deal()
 	{
