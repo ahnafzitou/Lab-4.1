@@ -8,11 +8,11 @@ public class decktester {
 		Deck deck = new Deck(rank,suit,pointValue);
 		System.out.println(deck.isEmpty());
 		System.out.println(deck.size());
-		//deck.deal();
-		for(int i = 0; i < deck.size(); i++)
+		System.out.println(deck.deal());
+		/*for(int i = 0; i < deck.size(); i++)
 		{
 			Card x = deck.deal();
 			x.toString();
-		}
+		}*/
 	}
 }
